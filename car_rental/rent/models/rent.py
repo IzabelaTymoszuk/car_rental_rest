@@ -1,6 +1,7 @@
 from django.db import models
 from .car import Car
 from .user import RenterUser
+from datetime import datetime
 
 
 class Rent(models.Model):
@@ -12,11 +13,17 @@ class Rent(models.Model):
 
     @property
     def number_of_day(self):
+
+        """Counts the days of renting."""
+
         delta = self.end_rent - self.start_rent
         return delta.days
 
     @property
     def amount(self):
+
+        """Counts the amount for rent."""
+
         return self.car.price_per_day * self.number_of_day
 
     def __str__(self):

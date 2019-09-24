@@ -3,7 +3,6 @@ from django.contrib.auth.models import AbstractUser
 from multiselectfield import MultiSelectField
 
 
-
 DRIVING_LICENSE_PERMISSION = (
     ('A', 'A'),
     ('B', 'B'),
